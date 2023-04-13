@@ -1,0 +1,4 @@
+<?php
+$first_name= "Manjunath";
+echo "My name is $first_name";
+?>

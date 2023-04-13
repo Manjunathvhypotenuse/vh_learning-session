@@ -1,0 +1,31 @@
+Question 2
+
+What is client and server?
+
+The browser is the client that sends requests/Query to the server, which is there in another location and the computer that handles the request and sends backs the required query/requests to the client is known as server.
+
+Client------------------>Server (PHP and laravel framework are used in Server end)
+            <-----------------      |
+                     Query                |
+                                                 |
+                                        Database (My SQL)
+
+
+
+
+Question 3
+
+What are REST APIs?
+
+API refers to Application Programming Interface.
+
+RESTful API is an interface that two computer systems use to exchange information securely over the internet. Most business applications have to communicate with other internal and third-party applications to perform various tasks.
+
+The REST API is consumed by making HTTP request (GET, POST, PUT or DELETE) from the client side. The API is implemented in way to return response in JSON.(JavaScript Object Notation)
+
+The GET method is used where data is short text data that does not contain any sensitive information.
+
+The POST method is used to send lengthy data or binary data, like images. It is also used to send sensitive information.
+
+The PUT method is typically used to update data to the server.
+
