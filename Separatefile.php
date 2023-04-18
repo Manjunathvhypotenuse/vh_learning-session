@@ -2,7 +2,7 @@
 
 namespace PersonAddress;
 // require_once 'task/person.php';
-class Address extends person_details
+class Address extends PersonDetails
 {
     protected $street;
     protected $city;

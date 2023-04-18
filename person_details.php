@@ -2,7 +2,7 @@
 
 namespace PersonAddress;
 
-class person_details {
+class PersonDetails {
     protected $name;
     protected $age;
 
