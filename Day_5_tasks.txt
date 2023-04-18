@@ -1,0 +1,33 @@
+2. What is OOP and its 4 main pillars?
+
+OOP stands for Structured Query Language and is a methodology or paradigm to design a program using classes and objects.
+
+The 4 main pillars of OOP are as follows:-
+
+1. Abstraction - 
+ Abstraction is the process of hiding the internal details of an application from the outer world. 
+Abstraction is used to describe things in simple terms. 
+It's used to create a boundary between the application and the client programs.
+
+2. Encapsulation - 
+Encapsulation refers to the bundling of data, along with the methods that operate on that data, into a single unit.
+It may also refer to the limiting of direct access to some of that data, such as an object's components.
+
+3  Inheritance -
+The child class will inherit all the public and protected properties and methods from the parent class.
+Inheritance have its own properties and methods.
+ An inherited class is defined by using the extends keyword.
+
+4. Polymorphism-
+Polymorphism is the method in an object-oriented programming language that performs different things as per the object's class, which calls it.
+ With the Polymorphism, a message is sent to multiple class objects, and every object responds appropriately according to the properties of the class.
+
+
+
+4. What are access modifiers?
+
+Properties and methods can have access modifiers which control where they can be accessed.
+
+1. Public - The property or method can be accessed from everywhere. This is default
+2. Protected - the property or method can be accessed within the class and by classes derived from that class
+3. Private - the property or method can only be accessed within the class
