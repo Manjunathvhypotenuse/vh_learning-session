@@ -1,0 +1,16 @@
+3) What is difference between web.php & api.php in routes folder?
+
+Web.php is the web routes that will be visited by our end users.
+
+api.php in the route folder refers to the developer's API (Application Programming Interface), if developer's have one.
+
+
+4) What is MVC design pattern?
+
+MVC stands for Model, View and Controller pattern which is used in Laravel framework.
+
+Model - Operations related to database creating.
+
+View - Refers to UI path (HTML and CSS)
+
+Controller - Which works as a bridge between view and model.
