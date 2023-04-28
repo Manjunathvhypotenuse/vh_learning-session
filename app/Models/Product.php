@@ -12,9 +12,11 @@ class Product extends Model
 
     protected $fillable = [
 
-        "category_id", 
+        "id", 
         "name",
         "is_active",
-
+        "timestamps",
+        "foreignid",
+        
     ];
 }
