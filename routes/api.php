@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\formcontroller;
@@ -38,11 +39,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::delete("/del", [formcontroller::class,"destroy"]);
 
 
-Route::post("/category", [CategoryController::class,"post"]);
-Route::post("/categories", [CategoryController::class,"bulkInsert"]);
-Route::get("/categories", [CategoryController::class,"get"]);
-Route::put("/category", [CategoryController::class,"put"]);
-Route::delete("/category", [CategoryController::class,"delete"]);
+// Route::post("/category", [CategoryController::class,"post"]);
+// Route::post("/categories", [CategoryController::class,"bulkInsert"]);
+// Route::get("/categories", [CategoryController::class,"get"]);
+// Route::put("/category", [CategoryController::class,"put"]);
+// Route::delete("/category", [CategoryController::class,"delete"]);
+
+
+Route::get("/products", [ProductController::class,"get"]);
+
 
 
   
