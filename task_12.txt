@@ -1,0 +1,24 @@
+Task 12
+
+1. Create 20 records in product table and get the lists of products ordered by its category name descending
+
+public function get() //
+{
+try{
+
+$products = Product::orderBy('name', 'DESC')
+ ->get();
+return response()->json(["message" => "Success","result" => $products], 200);
+ }
+catch (Exception $c) {
+ Log::error($c);
+
+
+
+
+3. What are aggregate functions?
+
+Laravel provides a variety of aggregate functions such as max, min, count,avg, and sum. 
+We can call any of these functions after constructing our query.
+
+
