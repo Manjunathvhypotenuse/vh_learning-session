@@ -46,8 +46,21 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::delete("/category", [CategoryController::class,"delete"]);
 
 
-Route::get("/products", [ProductController::class,"get"]);
+//Route::get("/products", [ProductController::class,"getproductformal"]);
 
+
+Route::group([
+    "middleware" => ["testing"],
+], function () {
+    Route::get ("/", function () {
+        return response()->json([
+            "message" => "success"
+            ], 200);
+
+   });
+ });
+
+ 
 
 
   

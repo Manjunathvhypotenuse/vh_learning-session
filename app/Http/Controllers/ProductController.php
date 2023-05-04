@@ -8,10 +8,12 @@ use Exception;
 use Illuminate\Database\Console\DbCommand;
 use Illuminate\Support\Facades\DB;
 use App\Models\Product;
+use Illuminate\Support\Facades\Validator;
 
 
-class ProductController extends Controller
-{
+
+// class ProductController extends Controller
+// {
 //     public function get()
 //     {
 //     try {
@@ -43,55 +45,52 @@ class ProductController extends Controller
 // }
 // }
 
-public function get(Request $request)
-{
-try{
-$filter = $request->query("filter");
-$Search = $request->query("search");
+// public function get(Request $request) 
+// {
+// try{
+// $filter = $request->query("filter");
+// $Search = $request->query("search");
 
-$query=Product::join("categories", "categories.id", "=", "products.category_id")
-->select(
-    "products.name as product_name",
-    "categories.name as category_name",    
-);
-if ($filter){
-    $flag = ($filter === "active only") ? 1: 0;
-    $query = $query->where("products.is_active", $flag);
+// $query=Product::join("categories", "categories.id", "=", "products.category_id")
+// ->select(
+//     "products.name as product_name",
+//     "categories.name as category_name",    
+// );
+// if ($filter){
+//     $flag = ($filter === "active only") ? 1: 0;
+//     $query = $query->where("products.is_active", $flag);
+// }
 
-}
+// if ($Search){
 
-if ($Search){
+//     $query=$query->whereRaw("
+//     products.name LIKE '%$Search%'
+//     OR categories.name LIKE '%$Search%'
+//     ");
 
-    $query=$query->whereRaw("
-    products.name LIKE '%$Search%'
-   
-    OR categories.name LIKE '%$Search%'
-    
-    ");
+// }
 
-}
+// $products=$query->orderBy("products.name","ASC")
+// ->paginate();
 
-$products=$query->orderBy("products.name","ASC")
-->paginate();
+// $pagination_options = [
+//     "current_page" => $products->currentPage(),
+//     "total_records"=> count($products->items()),
+// ];
 
-$pagination_options = [
-    "current_page" => $products->currentPage(),
-    "total_records"=> count($products->items()),
-];
+// return response()->json(["message" => "Success",
+// "result" => $products->items(),
+// "pagination_options" => $pagination_options], 200);
 
-return response()->json(["message" => "Success",
-"result" => $products->items(),
-"pagination_options" => $pagination_options], 200);
-
-}
-catch (Exception $c) {
-Log::error($c);
-return response()->json([
-    "message" => "internal server error",
-], 500);
-}
-}
-}
+// }
+// catch (Exception $c) {
+// Log::error($c);
+// return response()->json([
+//     "message" => "internal server error",
+// ], 500);
+// }
+// }
+// }
 
 
 
