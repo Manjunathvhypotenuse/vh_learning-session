@@ -32,7 +32,7 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('app'),
+            'root' => storage_path('app'), 
             'throw' => false,
         ],
 
@@ -56,8 +56,20 @@ return [
             'throw' => false,
         ],
 
-    ],
+    
 
+//     'custom' => [
+//         'driver' => 'local',
+//         'root' => storage_path('app/uploads'),
+//        // 'root' => public_path('uploads'),
+//         'url' => env('APP_URL').'/storage',
+//         'visibility' => 'public',
+//         'throw' => false,
+    
+
+// ],
+
+],
     /*
     |--------------------------------------------------------------------------
     | Symbolic Links
@@ -67,7 +79,7 @@ return [
     | `storage:link` Artisan command is executed. The array keys should be
     | the locations of the links and the values should be their targets.
     |
-    */
+    */ 
 
     'links' => [
         public_path('storage') => storage_path('app/public'),

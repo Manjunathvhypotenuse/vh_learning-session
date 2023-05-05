@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\formcontroller;
+use App\Http\Controllers\UploadController;
 
 use function PHPUnit\Framework\returnValue;
 
@@ -20,9 +21,9 @@ use function PHPUnit\Framework\returnValue;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 // Route:: get("/test", function () {
 //     return response ()->json([
@@ -48,21 +49,31 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 //Route::get("/products", [ProductController::class,"getproductformal"]);
 
-
-Route::group([
-    "middleware" => ["testing"],
-], function () {
-    Route::get ("/", function () {
-        return response()->json([
-            "message" => "success"
-            ], 200);
-
-   });
- });
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
  
+Route::middleware('api.endpoint')->group(function(){
+
+    Route::post("category",[CategoryController::class,"insert"]);
+    Route::post("category/bulkInsert",[CategoryController::class,"bulkInsert"]);
+    Route::get("category",[CategoryController::class,"get"]);
+    Route::put("category",[CategoryController::class,"update"]);
+    Route::delete("category",[CategoryController::class,"delete"]);
+    
+    Route::post("products",[ProductController::class,"insert"]);
+    Route::get("products",[ProductController::class,"getProducts"]);
+    
+    Route::get("productsAlter",[ProductController::class,"get_Products"]);
+    Route::get("productsFormal",[ProductController::class,"getproductformal"]);
+    
+    
+    });
 
 
+Route::post("uploadFile",[UploadController::class,"upload"]); //File upload
+Route::delete("deleteFile/{filename}",[UploadController::class,"delete"]); // File delete
   
 
 
