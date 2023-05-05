@@ -55,21 +55,11 @@ use function PHPUnit\Framework\returnValue;
 
  
 Route::middleware('api.endpoint')->group(function(){
-
-    Route::post("category",[CategoryController::class,"insert"]);
-    Route::post("category/bulkInsert",[CategoryController::class,"bulkInsert"]);
-    Route::get("category",[CategoryController::class,"get"]);
-    Route::put("category",[CategoryController::class,"update"]);
-    Route::delete("category",[CategoryController::class,"delete"]);
-    
-    Route::post("products",[ProductController::class,"insert"]);
-    Route::get("products",[ProductController::class,"getProducts"]);
-    
-    Route::get("productsAlter",[ProductController::class,"get_Products"]);
-    Route::get("productsFormal",[ProductController::class,"getproductformal"]);
-    
-    
-    });
+Route::post("category",[CategoryController::class,"insert"]);
+Route::get("category",[CategoryController::class,"get"]);
+Route::put("category",[CategoryController::class,"update"]);
+Route::delete("category",[CategoryController::class,"delete"]);
+});
 
 
 Route::post("uploadFile",[UploadController::class,"upload"]); //File upload
